@@ -2,7 +2,7 @@
 
 /**
  * Enter description here ...
- * @author mains2114
+ * @author 沐浴新光
  *
  */
 class Device_model extends CI_Model
