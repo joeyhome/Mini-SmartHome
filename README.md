@@ -1,0 +1,1 @@
+#Mini-SmartHome基于CodeIgniter框架开发的Restful接口风格的小型物联网云平台
