@@ -23,9 +23,9 @@ URL提供了找到该资源的方法，且包含了URI，可以说URL=HOST+URI�
 
 3、云平台测试<span id="OLE_LINK1" class="anchor"><span id="OLE_LINK2" class="anchor"></span></span>服务器地址与账号：
 
-云平台服务器地址（HOST）：<span id="OLE_LINK10" class="anchor"><span id="OLE_LINK11" class="anchor"></span></span>218.244.138.146:8000
+云平台服务器地址（HOST）：<span id="OLE_LINK10" class="anchor"><span id="OLE_LINK11" class="anchor"></span></span>115.28.93.126 :9999
 
-云平台测试用账号及密码：linpcloud + 1234
+云平台测试用账号及密码：hust + zx0301
 
 4、请求成功与失败的标识：以HTTP响应码来标识请求成功与失败；以200为成功的标识，400为云平台系统的错误标识，其它错误参考HTTP协议；返回信息以及错误提示信息均以JSON格式传回，置于info键下。
 
@@ -36,7 +36,7 @@ URL提供了找到该资源的方法，且包含了URI，可以说URL=HOST+URI�
 API接口及说明
 -------------
 
-1.  用户类
+####一.  用户类
 
 <!-- -->
 
@@ -87,7 +87,7 @@ username=&lt;username&gt;&password=&lt;password&gt;
 
 }
 
-1.  获取用户信息
+2.  获取用户信息
 
 获取个人用户信息。
 
@@ -141,15 +141,16 @@ URI：/api/user
 
 }
 
-1.  修改用户信息
+3.  修改用户信息
 
-2.  获取APIKEY
+4.  获取APIKEY
 
-3.  更换APIKEY
+5.  更换APIKEY
 
 <!-- -->
 
-1.  设备类
+
+####二、  设备类
 
 <!-- -->
 
@@ -194,7 +195,7 @@ name=device\_instance&tags=tags\_instance&locate=Wuhan&about=This+is+a+example+d
 
 }
 
-1.  获取设备列表
+2.  获取设备列表
 
 获取该用户下所有的设备信息。
 
@@ -262,7 +263,7 @@ URI：/api/devices
 
 \]
 
-1.  获取设备信息
+3.  获取设备信息
 
 获取某个具体设备的详细信息。
 
@@ -320,7 +321,7 @@ URI：/api/device/&lt;device\_id&gt;
 
 }
 
-1.  修改设备信息
+4.  修改设备信息
 
 先获取设备信息，再进行少量修改。
 
@@ -352,7 +353,7 @@ URI：/api/device/&lt;device\_id&gt;
 
 }
 
-1.  删除设备
+5.  删除设备
 
 删除某个具体设备。
 
@@ -382,7 +383,8 @@ URI：/api/device/&lt;device\_id&gt;
 
 }
 
-1.  传感器类
+
+####三、  传感器类
 
 <!-- -->
 
@@ -424,7 +426,7 @@ URI：/api/sensors
 
 }
 
-1.  获取传感器列表
+2.  获取传感器列表
 
 获取某个设备下所属的所有传感器的信息，返回一个JSON对象数组。
 
@@ -472,7 +474,7 @@ URI：/api/sensors/&lt;device\_id&gt;
 
 \]
 
-1.  获取传感器信息
+3.  获取传感器信息
 
 获取某个指定的传感器的信息，后续可用于修改信息。
 
@@ -530,7 +532,7 @@ URI：/api/sensor/&lt;sensor\_id&gt;
 
 }
 
-1.  修改传感器信息
+4.  修改传感器信息
 
 先获取传感器信息，再修改其基础的信息，如同类型以及所属设备这样的字段一般是不允许更改的。
 
@@ -563,7 +565,7 @@ URI：/api/sensor/&lt;sensor\_id&gt;
 
 }
 
-1.  删除传感器
+5.  删除传感器
 
 删除某个具体的传感器，（或许会添加回收功能）
 
@@ -593,7 +595,8 @@ URI：/api/sensor/&lt;sensor\_id&gt;
 
 }
 
-1.  数据点类
+
+####四、  数据点类
 
 <!-- -->
 
@@ -628,7 +631,7 @@ URI：/api/datapoint
 
 }
 
-1.  获取数据
+2.  获取数据
 
 获取某个传感器的最新数据（last\_data）。
 
@@ -660,7 +663,7 @@ URI：/api/datapoint/&lt;sensor\_id&gt;
 
 }
 
-1.  批量上传数据（适用于网关）
+3.  批量上传数据（适用于网关）
 
 批量上传某个设备下传感器的数据，并激活该设备（设置设备的最后活动时间，通过判断这个值来确定设备是否在线）。
 
@@ -693,7 +696,7 @@ urlencode之后：json=%5B%7B%22sensor\_id%22%3A100005%2C%22value%22%3A%22000000
 
 }
 
-4、批量获取数据（设计用于控制终端）
+4. 批量获取数据（设计用于控制终端）
 
 用于获取某个设备下所有传感器的最新数据。
 
@@ -759,7 +762,7 @@ URI：/api/datapoints/device/&lt;device\_id&gt;
 
 \]
 
-5、获取历史数据
+5. 获取历史数据
 
 用于获取某个传感器的历史数据。
 
@@ -829,7 +832,8 @@ URI：/api/datapoints/sensor/&lt;sensor\_id&gt;
 
 \]
 
-1.  辅助类
+
+####六、 辅助类
 
 <!-- -->
 
@@ -849,7 +853,7 @@ URI：/helper/md5/&lt;string&gt;
 |--------|------|--------|---------------------|
 | string | true | string | 需要获取MD5的字符串 |
 
-1.  获取SHA1
+2.  获取SHA1
 
 使用参考“获取MD5”，返回制定字符串的SHA1值。
 
@@ -857,7 +861,7 @@ URI：/helper/md5/&lt;string&gt;
 
 URI：/helper/sha1/&lt;string&gt;
 
-1.  获取当前时间戳
+3.  获取当前时间戳
 
 获取当前时间的时间戳。
 
